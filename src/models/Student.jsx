@@ -1,0 +1,1 @@
+// making a model student to share the same datastructure
