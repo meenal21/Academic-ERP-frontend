@@ -11,7 +11,10 @@ export default class Student{
         this._cgpa = data.cgpa,
         this._domain = data.domain,
         this._totalCredits = data.totalCredits,
-        this._graduationYear = data.graduationYear
+        this._graduationYear = data.graduationYear,
+        this._specialisation = data.specialisation;
+        this._placement_id = data.placement_id;
+        this._educationList = data.educationList;
     }
     // when you refer - this.fullname - you essentially call get fullName() 
     get fullName() {
@@ -30,7 +33,10 @@ export default class Student{
             totalCredits: this._totalCredits,
             photographPath: this._photographPath,
             domain: this._domain,
-            graduationYear: this._graduationYear
+            graduationYear: this._graduationYear,
+            specialisation :this._specialisation,
+            placement_id :this._placement_id,
+            educationList : this._educationList
         };
     }
 

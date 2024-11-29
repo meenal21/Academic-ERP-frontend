@@ -56,4 +56,83 @@
     color: #ff704d; /* Peach color for error messages */
     text-align: center;
   }
+
+  /* In your CSS file */
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
   
+/* Style the dropdown container */
+.form-group {
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Style the select box */
+.form-group-dropdown select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ff704d; /* Peach border color */
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none; /* Removes default dropdown arrow for custom styling */
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.form-group-dropdown select:focus {
+  border-color: #ff5722; /* Highlight color on focus */
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3); /* Subtle shadow */
+}
+
+/* Placeholder-like styling for the first option */
+.form-group-dropdown select option[value=""] {
+  color: #aaa;
+}
+
+/* Hover effect for select box */
+.form-group-dropdown select:hover {
+  border-color: #ff5722;
+}
+
+/* Style dropdown options */
+.form-group-dropdown select option {
+  padding: 10px;
+  background: #fff;
+  color: #333;
+}
+
+/* Style dropdown container */
+.form-group-dropdown {
+  position: relative;
+}
+
+.form-group-dropdown::after {
+  content: '\25BC'; /* Custom arrow */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #ff5722; /* Arrow color */
+}
+
+.form-group-dropdown select:disabled {
+  background-color: #e9ecef; /* Light grey background */
+  color: #6c757d; /* Grey text */
+  cursor: not-allowed;
+}

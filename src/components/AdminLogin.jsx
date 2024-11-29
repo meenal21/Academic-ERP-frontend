@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 // import  './LoginForm.css'
 import { useNavigate } from 'react-router-dom';
+import '../assets/AdminLogin.css'
 
 //creating a functional component - LoginForm()
 const LoginForm = () => {
@@ -65,7 +66,7 @@ const LoginForm = () => {
 
 return (
     <div className="login-form-container">
-        <h2>Login</h2>
+        <h2>Admin Login</h2>
         <br/>
         {/* using the event listener  onSubmit and using handle submit */}  
         <form onSubmit={handleSubmit} className = "login-form">
