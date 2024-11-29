@@ -1,0 +1,65 @@
+/* StudentList.css */
+
+/* Body styling */
+body {
+    background-color: #fff5e1; /* Light peach background */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Dark text color for readability */
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #ff704d; /* Peach color for the header text */
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+/* Table header cells */
+th {
+    background-color: #ff704d; /* Peach background for header cells */
+    color: white; /* White text in headers */
+    padding: 12px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+/* Table data cells */
+td {
+    padding: 10px;
+    border: 1px solid #ff704d; /* Peach borders around cells */
+    text-align: left;
+    color: #333; /* Dark text color */
+}
+
+/* Table row styling */
+tr {
+    background-color: #fff; /* White background for table rows */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+}
+
+/* Hover effect for table rows */
+tr:hover {
+    background-color: #ffebcc; /* Light peach background on hover */
+}
+
+/* No students message styling */
+p.no-students {
+    color: #ff704d;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Loading and error messages */
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff704d;
+}

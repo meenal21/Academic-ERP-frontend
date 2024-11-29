@@ -25,6 +25,7 @@ const useStudents = () =>  {
         try{
             const response = await apiClient.get('/students');
             setStudents(response.data);
+            console.log(response.data);
         }
         catch(err){
             setError("Failed to fetch records");
@@ -43,3 +44,5 @@ const useStudents = () =>  {
 
     return {students, isLoading, error};
 }
+
+export default useStudents;

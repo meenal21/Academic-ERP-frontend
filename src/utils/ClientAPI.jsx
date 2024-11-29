@@ -10,7 +10,7 @@ import axios from 'axios';
 //root API call will use this API
 // then endpoint - /students
 const apiClient = axios.create({
-    baseURL : 'https://localhost:8080/api/v1',
+    baseURL : 'http://localhost:8080/api/v1',
     timeout : 10000,
 })
 
