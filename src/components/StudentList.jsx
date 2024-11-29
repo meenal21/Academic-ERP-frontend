@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useStudents from '../hooks/useStudents';
-import './StudentList.css'; 
+import '../assets/StudentList.css'; 
 //in presentation layer!
 
 const StudentList = () => {
@@ -10,8 +10,8 @@ const StudentList = () => {
 
     const navigate = useNavigate();
     // Handle the student click
-    const handleStudentClick = (id) => {
-        navigate(`/student/${id}`);
+    const handleStudentClick = (email) => {
+        navigate(`/students/${email}`);
     };
 
 

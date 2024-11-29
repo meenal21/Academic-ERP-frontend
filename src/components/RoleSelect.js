@@ -14,7 +14,7 @@ const RoleSelect = () => {
             </div>
             {/* So here we are not having any event to submit - so we just use navigate hook to move to a page */}
             {/* we are giving a route here, and we will define this in the calling function - App.js*/}
-            <button className='btn btn-secondary' onClick={() => navigate('/login')}>Select</button>
+            <button className='btn btn-secondary' onClick={() => navigate('/adminlogin')}>Select</button>
             
         </div>
         <div className = "card">

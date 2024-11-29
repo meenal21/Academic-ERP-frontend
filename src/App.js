@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginForm from './components/AdminLogin';
 import RoleSelect from './components/RoleSelect';
 import StudentList from './components/StudentList';
+import StudentDetails from './components/StudentDetails';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<RoleSelect />}/>
-        <Route path='/login' element={<StudentList/>} />
+        <Route path='/admin/students' element={<StudentList/>} />
+        <Route path='/adminlogin' element={<LoginForm/>} />
+        <Route path='/students/:email' element={<StudentDetails />} />
       </Routes>
     </Router>
   );

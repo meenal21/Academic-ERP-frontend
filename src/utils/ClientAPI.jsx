@@ -17,15 +17,21 @@ const apiClient = axios.create({
 //timeout for a request - 10 seconds
 
 //intercept all the requests 
-apiClient.interceptors.response.use(
-    (response) => response,
+apiClient.interceptors.request.use(
+    (config) => {
+        // Get the token from localStorage
+        const token = localStorage.getItem('token');
+        if (token) {
+            // If token exists, include it in the Authorization header
+            config.headers['Authorization'] = `Bearer ${token}`;
+        }
+        return config;
+    },
     (error) => {
-        console.error('API error: ', error);
+        // Handle the error
         return Promise.reject(error);
     }
-)
-
-
+);
 //response interceptor - intercept and process API responses- before they reach calling code
 // so this passes successful responses unchanged directly to called code (response) => {response}
 // error handling - (error) => {} processes errors globally and then reject the promise

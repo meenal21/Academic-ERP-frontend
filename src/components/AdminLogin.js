@@ -1,10 +1,16 @@
 import React, { useState }  from 'react';
 // import  './LoginForm.css'
+import { useNavigate } from 'react-router-dom';
 
 //creating a functional component - LoginForm()
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    
+    const navigate = useNavigate();
+    //navigate to student details on login
+
 
     //eventListener - when form will be submitted
     //e here is the event object - here the form data
@@ -16,11 +22,12 @@ const LoginForm = () => {
     // to let Js handle the form submission
     // form data would stay in the react states - email and password
 
+
     try{
 
         //fetch sends a request to the url mentioned - method is defined inside
         //the url is the server wala url - where the login details will be processed - use post here
-        const response = await fetch('http://localhost:3000/api/login',
+        const response = await fetch('http://localhost:8080/api/v1/admin/login',
             {
                 method : 'POST',
                 headers : { 'Content-Type': 'application/json' },
@@ -35,13 +42,17 @@ const LoginForm = () => {
 
         //json converts from json to javascript object
         // await - so that the code waits for the response before it loads and also makes sure the data is fully parsed object
-        const data = await response.json();
-        console.log(data);
+        const data = await response.text();
+        console.log('response is: ',data);
         
-        if(data.success){
-            alert(data.message);
-        }
-        else{
+        if (data) {
+            alert('Login successful!');
+            // Store the token for future requests
+            localStorage.setItem('token', data);
+            // Redirect the user or update the UI as needed
+            navigate('/admin/students'); //navigate to studentDeatils.jsx
+            
+        } else {
             alert('Login failed!');
         }
     }
