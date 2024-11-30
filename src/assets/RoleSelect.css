@@ -2,111 +2,84 @@
 
 /* Container */
 .select-role-container {
-    max-width: 800px;
-    margin: 60px auto;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .select-role-container h2 {
-    font-size: 36px;
-    margin-bottom: 50px;
-    color: #333;
-  }
-  
-  /* Cards Container */
-  .cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  
-  /* Card Styles */
-  .card {
-    background-color: #fff;
-    border-radius: 16px;
-    width: 200px;
-    height: 250px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    text-align: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .card-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    font-size: 60px;
-    line-height: 80px;
-    border-radius: 50%;
-    color: #fff;
-  }
-  
-  .admin-icon {
-    background-color: #007bff;
-  }
-  
-  .student-icon {
-    background-color: #28a745;
-  }
-  
-  .card-content h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 0;
-    transition: color 0.3s ease;
-  }
-  
-  .card:hover .card-content h3 {
-    color: #555;
-  }
-  
-  /* Hover Effects */
-  .card::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1));
-    transition: height 0.3s ease;
-    z-index: 1;
-  }
-  
-  .card:hover::after {
-    height: 100%;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    .cards {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff5e1;  /* Light peach background (theme color) */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.select-role-container h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff704d; /* Peach color for the header */
+}
+
+.role-description {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555; /* Soft gray text for the description */
+}
+
+/* Role Buttons Container */
+.role-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual Role Button Styles */
+.role-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  width: 200px;
+  height: 60px;
+}
+
+/* Admin Button */
+.admin-button {
+  background-color: #ff704d;  /* Light Peach for Admin Button */
+}
+
+.admin-button:hover {
+  background-color: #e55d3c;  /* Darker peach on hover */
+}
+
+/* Student Button */
+.student-button {
+  background-color: #ffb74d;  /* Warm Yellow for Student Button */
+}
+
+.student-button:hover {
+  background-color: #ff9e3d;  /* Darker yellow on hover */
+}
+
+/* Hover Effect for Buttons */
+.role-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .role-buttons {
       flex-direction: column;
       align-items: center;
-    }
-  
-    .card {
-      width: 80%;
-      margin-bottom: 30px;
-    }
   }
-  
+
+  .role-button {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+}

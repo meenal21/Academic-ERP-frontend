@@ -8,6 +8,11 @@ const StudentList = () => {
     //custom hook, to fetch the students
     const {students, isLoading, error} = useStudents();
 
+    const logout = () => {
+        localStorage.removeItem('token'); // Clear JWT token
+        window.location.href = '/adminlogin'; // Redirect to login page
+    };
+    
     const navigate = useNavigate();
     // Handle the student click
     const handleStudentClick = (email) => {
@@ -34,10 +39,13 @@ const StudentList = () => {
     /* check is the students list has students*/
     /* for now not using the clicking handling part!*/
     return (
-        <>
-            <h1>
-                Student List
-            </h1>
+        <div className="student-list-wrapper">
+            <button onClick={logout} className="logout-button">
+                    Logout
+                </button>
+            <h3>
+                Student Records
+            </h3>
             {students.length > 0 ? (
             <table table striped bordered >
             <thead>
@@ -63,7 +71,7 @@ const StudentList = () => {
                 <p className="no-students">No Students available</p>
             )}
             
-        </>
+        </div>
     );
 };   
 

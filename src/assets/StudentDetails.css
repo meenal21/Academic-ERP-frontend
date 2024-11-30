@@ -1,138 +1,227 @@
-/* StudentDetails.css */
-
 .student-details-container {
-    width: 50%;
-    margin: 50px auto;
-    background-color: #fff5e1; /* Light peach background */
-    padding: 20px;
-    border: 1px solid #ff704d; /* Peach border */
-    border-radius: 8px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #ff704d; /* Peach color for the header text */
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ff704d; /* Peach border */
-    border-radius: 4px;
-    font-size: 1em;
-  }
-  
-  .form-group input:disabled {
-    background-color: #eee;
-  }
-  
-  button {
-    background-color: #ff704d; /* Peach button */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-right: 10px;
-  }
-  
-  button:hover {
-    background-color: #e55d3c; /* Darker peach on hover */
-  }
-  
-  p {
-    color: #ff704d; /* Peach color for error messages */
-    text-align: center;
-  }
-
-  /* In your CSS file */
-.error {
-  color: red;
-  font-size: 0.9em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff5e1; /* Light peach background */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-  
-/* Style the dropdown container */
+.student-photo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.student-photo-wrapper {
+  position: relative;
+}
+
+.student-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular photo */
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid #ff704d; /* Peach border around photo */
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #ffe6cc; /* Light peach placeholder */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-size: 1em;
+  border: 1px dashed #ff704d; /* Peach dashed border */
+  border-radius: 50%; /* Circular placeholder */
+  cursor: pointer;
+}
+
+.change-photo {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.upload-label {
+  cursor: pointer;
+  background-color: #ff704d; /* Peach color */
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.file-input {
+  display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between form elements */
+}
+
 .form-group {
   margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
-  position: relative;
 }
 
-.form-group label {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 8px;
-  display: block;
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff704d; /* Orange labels */
+  text-align: left; /* Ensure left alignment */
 }
 
-/* Style the select box */
-.form-group-dropdown select {
+input[type="text"], input[type="number"], input[type="email"], select {
   width: 100%;
-  padding: 10px 12px;
-  border: 2px solid #ff704d; /* Peach border color */
-  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #ff704d; /* Peach button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 16px;
-  background-color: #f9f9f9;
-  color: #333;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  appearance: none; /* Removes default dropdown arrow for custom styling */
-  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
 }
 
-
-.form-group-dropdown select:focus {
-  border-color: #ff5722; /* Highlight color on focus */
-  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3); /* Subtle shadow */
+button[type="button"] {
+  background-color: #ff704d; /* Peach color for secondary buttons */
 }
 
-/* Placeholder-like styling for the first option */
-.form-group-dropdown select option[value=""] {
-  color: #aaa;
+button:hover {
+  background-color: #e55d3c; /* Darker peach on hover */
 }
 
-/* Hover effect for select box */
-.form-group-dropdown select:hover {
-  border-color: #ff5722;
+button[type="button"]:hover {
+  background-color: #e55d3c; /* Darker peach for hover */
 }
 
-/* Style dropdown options */
-.form-group-dropdown select option {
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.education-box {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff5e1; /* Light peach background */
+  border-radius: 10px;
+  border: 1px solid #ff704d; /* Peach border */
+}
+
+/* Education Table Styles */
+.education-table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures the borders between cells merge */
+  margin-top: 20px;
+}
+
+.education-table th, .education-table td {
+  border: 1px solid #ff704d; /* Peach border */
   padding: 10px;
-  background: #fff;
-  color: #333;
+  text-align: left; /* Ensure left alignment for table data */
 }
 
-/* Style dropdown container */
-.form-group-dropdown {
-  position: relative;
+.education-table th {
+  background-color: #ffe6cc; /* Slight peach background for header */
+  font-weight: bold;
 }
 
-.form-group-dropdown::after {
-  content: '\25BC'; /* Custom arrow */
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #ff5722; /* Arrow color */
+.education-table td {
+  background-color: #fff;
 }
 
-.form-group-dropdown select:disabled {
-  background-color: #e9ecef; /* Light grey background */
-  color: #6c757d; /* Grey text */
-  cursor: not-allowed;
+.education-table td button {
+  background-color: #ff704d; /* Peach buttons in table */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.education-table td button:hover {
+  background-color: #e55d3c;
+}
+
+/* Education Add/Edit Form Styles */
+.education-form {
+  margin-top: 20px;
+  border: 1px solid #ff704d; /* Peach border */
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff5e1; /* Light peach background */
+}
+
+.education-form .form-group {
+  margin-bottom: 10px;
+}
+
+.education-form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff704d; /* Orange labels */
+}
+
+.education-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.education-form button {
+  background-color: #ff704d; /* Peach button */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.education-form button:hover {
+  background-color: #e55d3c; /* Darker peach on hover */
+}
+
+.logout-button {
+  padding: 10px 15px;
+  background-color: #ff704d; /* Peach color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  margin-left: auto; /* Push the button to the right if in a flex container */
+}
+
+.logout-button:hover {
+  background-color: #e55d3c;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Center the title */
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff5e1;
+  border-bottom: 2px solid #ff704d; /* Peach bottom border */
+}
+
+.student-details-container h1 {
+  color: #ff704d; /* Orange for the title */
+  margin: 0;
+  text-align: center;
 }

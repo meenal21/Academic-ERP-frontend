@@ -14,7 +14,7 @@ export default class Student{
         this._graduationYear = data.graduationYear,
         this._specialisation = data.specialisation;
         this._placement_id = data.placement_id;
-        this._educationList = data.educationList;
+        this._education_list = data.education_list;
     }
     // when you refer - this.fullname - you essentially call get fullName() 
     get fullName() {
@@ -36,7 +36,7 @@ export default class Student{
             graduationYear: this._graduationYear,
             specialisation :this._specialisation,
             placement_id :this._placement_id,
-            educationList : this._educationList
+            education_list : this._education_list
         };
     }
 

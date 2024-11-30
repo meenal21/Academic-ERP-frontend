@@ -29,7 +29,17 @@ apiClient.interceptors.request.use(
     },
     (error) => {
         // Handle the error
-        return Promise.reject(error);
+        if (error.response && error.response.status === 500 ) {
+            // If the token is invalid or expired
+            const message = error.response.data?.message || '';
+            if (message.includes('JWT expired')) {
+                console.error(error);   
+                alert('Session expired. Please log in again.');
+                localStorage.removeItem('token'); // Clear the expired token
+                window.location.href = '/login'; // Redirect to login page
+            }
+        }
+        return Promise.reject(error); // Propagate other errors
     }
 );
 //response interceptor - intercept and process API responses- before they reach calling code

@@ -24,22 +24,30 @@ const useStudents = () =>  {
     // this would be an async call - but why? - makes an api request to fetch the data
     useEffect(() => {
         const fetchStudents = async () => {
-            //in try block - if error thrown from the get - we can catch here
-            try{
+            try {
                 const response = await apiClient.get('/students');
                 setStudents(response.data);
-                console.log(response.data);
-            }
-            catch(err){
-                setError("Failed to fetch records");
-            }
-            // stop the loading once the response is in our hands
-            finally{
+            } catch (err) {
+                console.log(err.response);
+                if (err.response && err.response.status === 500) {
+                    {
+                        setError('Authentication token failed. Please log in again.');
+                        localStorage.removeItem('token'); // Clear invalid token
+                        navigate('/adminlogin'); // Redirect to login page
+                    }
+
+                } else {
+                    // Handle other errors
+                    setError('Failed to fetch student records.');
+                }
+            } finally {
                 setIsLoading(false);
             }
         };
+
         fetchStudents();
-    }, []);
+    }, [navigate]);
+
 
     //when to trigger the fetchStudents? when this hook is used in the component- which hook? useStudents
     // useEffect( ()=> {

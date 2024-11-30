@@ -65,6 +65,7 @@ const LoginForm = () => {
 };
 
 return (
+    <div className='login-page'>
     <div className="login-form-container">
         <h2>Admin Login</h2>
         <br/>
@@ -72,16 +73,17 @@ return (
         <form onSubmit={handleSubmit} className = "login-form">
         {/* using anonymous function in the onChange event handler */}
         {/*e.target.value  */} 
-        <div classname='form-group'>
+        <div className='form-group'>
         <input type='email' placeholder='enter your email here' className='form-control' value={email} onChange={(e)=> setEmail(e.target.value)} required/>
         </div>
         <br/>
-        <div classname='form-group'>
+        <div className='form-group'>
         <input type='password' placeholder='enter your password here' className='form-control' value= {password} onChange={(e)=> setPassword(e.target.value)} required/>
         </div>
         <br />
-        <button type="submit" className='btn btn-primary'>Login</button>
+        <button type="submit" className= ' btn-primary'>Login</button>
         </form>
+    </div>
     </div>
 );
 };

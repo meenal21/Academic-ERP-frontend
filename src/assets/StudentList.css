@@ -1,65 +1,108 @@
-/* StudentList.css */
-
-/* Body styling */
-body {
+/* Wrapper for the entire Student List page */
+.student-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Full screen height */
     background-color: #fff5e1; /* Light peach background */
-    font-family: 'Arial', sans-serif;
-    color: #333; /* Dark text color for readability */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
 }
 
-/* Header styling */
-h1 {
+/* Heading for the Student List page */
+.student-list-wrapper h3 {
+    color: #ff704d; /* Peach color for the header */
+    font-size: 2.2em; /* Increased font size for prominence */
+    margin-bottom: 20px;
     text-align: center;
-    color: #ff704d; /* Peach color for the header text */
-    font-size: 2.5em;
-    margin-top: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for text */
+    letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+}
+
+/* Table container for centering */
+.student-list-wrapper .table-container {
+    width: 100%; /* Full width within parent, but maxed out */
+    max-width: 400px; /* Constrain the max width to 1000px */
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    background-color: #fff; /* White background for the table container */
+    padding: 15px;
+    box-sizing: border-box; /* Prevent padding from affecting width */
 }
 
 /* Table styling */
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
+.student-list-wrapper table {
+    width: 50%; /* Table width should be 100% of its container */
+    border-collapse: collapse; /* Remove gaps between cells */
+    border: 1px solid #ff704d; /* Peach border for the table */
+    background-color: #fff; /* White background for table */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left; /* Align content to the left */
+    margin-top: 20px; /* Add margin to the top of the table */
 }
 
-/* Table header cells */
-th {
+/* Table headers */
+.student-list-wrapper th {
     background-color: #ff704d; /* Peach background for header cells */
     color: white; /* White text in headers */
-    padding: 12px;
-    font-size: 1.1em;
-    text-align: left;
+    padding: 12px; /* Moderate padding for a balanced look */
+    font-size: 1.1em; /* Slightly larger font for headers */
+    font-weight: bold;
+    text-align: center; /* Center align header text */
 }
 
-/* Table data cells */
-td {
-    padding: 10px;
-    border: 1px solid #ff704d; /* Peach borders around cells */
-    text-align: left;
+/* Table data */
+.student-list-wrapper td {
+    padding: 10px; /* Comfortable padding */
+    border-bottom: 1px solid #ffccb3; /* Light peach border for rows */
     color: #333; /* Dark text color */
+    font-size: 1em; /* Standard font size for data */
+    text-align: center; /* Center align table data */
+    word-wrap: break-word; /* Wrap text if it overflows */
 }
 
-/* Table row styling */
-tr {
-    background-color: #fff; /* White background for table rows */
-    cursor: pointer; /* Cursor changes to pointer on hover */
+/* Table rows */
+.student-list-wrapper tr {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer; /* Show pointer cursor on hover */
 }
 
 /* Hover effect for table rows */
-tr:hover {
-    background-color: #ffebcc; /* Light peach background on hover */
+.student-list-wrapper tr:hover {
+    background-color: #ffe6cc; /* Light peach on hover */
+    transform: scale(1.01); /* Subtle zoom effect */
 }
 
 /* No students message styling */
-p.no-students {
-    color: #ff704d;
+.student-list-wrapper p.no-students {
+    color: #ff704d; /* Peach color for message */
     font-style: italic;
     text-align: center;
+    font-size: 1.5em; /* Larger font for emphasis */
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-/* Loading and error messages */
-p {
-    text-align: center;
-    font-size: 1.2em;
-    color: #ff704d;
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .student-list-wrapper h3 {
+        font-size: 1.8em; /* Smaller header size */
+    }
+
+    .student-list-wrapper table {
+        font-size: 0.9em; /* Slightly smaller table font size */
+    }
+
+    .student-list-wrapper td,   
+    .student-list-wrapper th {
+        padding: 8px; /* Reduced padding for smaller screens */
+    }
+
+    .student-list-wrapper p.no-students {
+        font-size: 1.2em; /* Slightly smaller font for no-students message */
+    }
 }
